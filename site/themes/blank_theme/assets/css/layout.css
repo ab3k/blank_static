@@ -1,0 +1,116 @@
+/**
+ * 2 breakpoints, 3 widths:
+ *   (small)
+ *   40em
+ *   (medium)
+ *   70em
+ *   (large)
+ *
+ * layout structure:
+ *   (very top)
+ *   #page
+ *     #header
+ *       #banner, #title
+ *     #content
+ *     #footer
+ *   (very bottom)
+ *
+ * contrainted containers:
+ * full width on small, max width centered on medium, max width pushed
+ * left on large
+ *   .container
+ *   .flex-container (display: flex)
+ *   .grid-container (display: grid)
+ *     .before .content .after
+ */
+
+:root {
+  --base-size: 20px;
+  --base-line: 1.5;
+
+  --full-line: calc(var(--base-line) * 1rem);
+  --half-line: calc(var(--full-line) / 2);
+  --quarter-line: calc(var(--full-line) / 4);
+
+  line-height: var(--base-line);
+}
+@media (min-width: 40em) {
+  :root {
+    --base-size: 19px;
+    --base-line: 1.5;
+  }
+}
+
+/* layout */
+html {
+  font-size: var(--base-size);
+  line-height: var(--base-line);
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+#page {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#content {
+  flex: 1 0 auto;
+  width: 100%;
+}
+#header,
+#footer {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* container */
+.container {
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.flex-container {
+  display: flex;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 40rem) 1fr;
+}
+.grid-container > .content,
+.grid-container > .before,
+.grid-container > .after {
+    grid-column-start: 2;
+    grid-column-end: 2;
+}
+@media screen and (min-width: 40em) {
+  .container {
+    max-width: 40rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media screen and (min-width: 70em) {
+  .container {
+    margin-left: clamp(1rem, 20%, 20rem);
+  }
+  .grid-container {
+    grid-template-columns: clamp(1rem, 20%, 20rem) minmax(auto, 40rem) 1fr;
+  }
+  .grid-container > .before {
+    grid-column-start: 1;
+    grid-column-end: 1;
+  }
+  .grid-container > .content {
+    grid-column-start: 2;
+    grid-column-end: 2;
+  }
+  .grid-container > .after {
+    grid-column-start: 3;
+    grid-column-end: 3;
+  }
+}
