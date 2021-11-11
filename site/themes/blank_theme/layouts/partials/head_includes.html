@@ -14,21 +14,12 @@
 <meta name="theme-color" content="{{ $.Site.Params.themeColor }}">
 {{ end }}
 
-{{ $fonts := resources.Get "css/fonts.css" }}
-{{ $base := resources.Get "css/base.css" }}
-{{ $layout := resources.Get "css/layout.css" }}
-{{ $utils := resources.Get "css/utils.css" }}
-{{ $typography := resources.Get "css/typography.css" }}
-{{ $style := resources.Get "css/style.css" }}
+{{ $css := resources.Get "css/main.css" }}
+{{ $opts := dict "inlineImports" true }}
+{{ $css = $css | resources.PostCSS $opts }}
 {{ if .Site.IsServer }}
-<link rel="stylesheet" href="{{ $fonts.RelPermalink }}" />
-<link rel="stylesheet" href="{{ $base.RelPermalink }}" />
-<link rel="stylesheet" href="{{ $layout.RelPermalink }}" />
-<link rel="stylesheet" href="{{ $utils.RelPermalink }}" />
-<link rel="stylesheet" href="{{ $typography.RelPermalink }}" />
-<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-{{ else }}
-{{ $css := slice $fonts $base $layout $utils $typography $style | resources.Concat "css/main.css" }}
-{{ $css := $css | resources.Minify | resources.Fingerprint "sha256" }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+{{ else}}
+{{ $css = $css | resources.Minify | resources.Fingerprint "sha256" }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" {{ printf "integrity=%q" $css.Data.Integrity | safeHTMLAttr }} />
 {{ end}}
