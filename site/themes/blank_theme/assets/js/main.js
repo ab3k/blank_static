@@ -1,4 +1,4 @@
-import { isModern } from './utils.js'
+import { isModern, toggleVerticalRhythm } from './utils.js'
 
 if (isModern()) {
   const rootElement = document.documentElement
@@ -6,5 +6,6 @@ if (isModern()) {
 }
 
 window.Theme = {
-  isModern: isModern
+  isModern: isModern,
+  toggleVerticalRhythm: toggleVerticalRhythm
 }
