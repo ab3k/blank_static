@@ -23,3 +23,13 @@
 {{ $css = $css | resources.Minify | resources.Fingerprint "sha256" }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" {{ printf "integrity=%q" $css.Data.Integrity | safeHTMLAttr }} />
 {{ end}}
+
+{{ $js := resources.Get "js/main.js" }}
+{{ if .Site.IsServer }}
+{{ $opts := dict "target" "es6" "minify" false "format" "iife" "sourceMap" "inline" }}
+{{ $js = $js | js.Build $opts }}
+{{ else}}
+{{ $opts := dict "target" "es6" "minify" true "format" "iife" }}
+{{ $js = $js | js.Build $opts }}
+{{ end}}
+<script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>
