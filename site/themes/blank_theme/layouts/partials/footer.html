@@ -1,0 +1,17 @@
+<footer id="footer">
+  <div id="footer-menu" class="container">
+    <nav>
+      <ul>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.footer }}
+          {{ $isInMenuTree := or ($currentPage.IsMenuCurrent "footer" .) ($currentPage.HasMenuCurrent "footer" .) }}
+          {{ $isSameURL := eq $currentPage.RelPermalink .URL }}
+          {{ $active := or $isInMenuTree $isSameURL }}
+          <li class="{{ if $active }}active{{ end }}">
+            <a href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</footer>

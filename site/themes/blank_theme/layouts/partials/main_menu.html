@@ -1,0 +1,25 @@
+<div id="main-menu">
+  <input id="main-menu-toggle" type="checkbox">
+  
+  <label for="main-menu-toggle">
+    <svg viewBox="0 0 120 80">
+      <rect class="bar top" rx="6" x="4" y="4"  width="112" height="12"></rect>
+      <rect class="bar middle" rx="6" x="4" y="34" width="112" height="12"></rect>
+      <rect class="bar bottom" rx="6" x="4" y="64" width="112" height="12"></rect>
+    </svg>
+  </label>
+  
+  <nav>
+    <ul>
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+        {{ $isInMenuTree := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+        {{ $isSameURL := eq $currentPage.RelPermalink .URL }}
+        {{ $active := or $isInMenuTree $isSameURL }}
+        <li class="{{ if $active }}active{{ end }}">
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
+</div>
