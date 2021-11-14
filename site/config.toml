@@ -1,4 +1,5 @@
 baseURL = "http://example.org/"
+disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 languageCode = "en-us"
 theme = "blank_theme"
 title = "My New Hugo Site"
