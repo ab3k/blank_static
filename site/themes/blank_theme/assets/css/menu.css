@@ -1,0 +1,111 @@
+/**
+ * Menus
+ */
+
+/* Revert list styling for lists in nav elements */
+
+nav > ul {
+  padding: 0;
+  margin: 0;
+}
+
+nav > ul > li::before {
+  content: "";
+  content: revert;
+}
+
+/* Main menu */
+
+:root {
+  /* Fallback value is the full viewport height. This value gets dynamically
+   * updated via JS so that the open/close animation looks smoother. */
+  --main-menu-max-height: 100vh;
+}
+
+#main-menu-toggle {
+  display: none;
+}
+
+label[for="main-menu-toggle"] {
+  display: flex;
+  height: var(--full-line);
+  justify-content: flex-start;
+  padding: var(--quarter-line) 0;
+}
+
+label[for="main-menu-toggle"] svg {
+  display: block;
+  height: 100%;
+  fill: black;
+}
+
+label[for="main-menu-toggle"]:hover {
+  cursor: pointer;
+}
+
+label[for="main-menu-toggle"]:active svg rect.top {
+  transform: translateY(4px);
+}
+
+label[for="main-menu-toggle"]:active svg rect.bottom {
+  transform: translateY(-4px);
+}
+
+#main-menu-toggle ~ nav {
+  /* max-height is transitionable */
+  max-height: 0;
+
+  /* prevent scroll bar showing up while transitioning: the max-height:0 is
+   * effective before we are done transitioning */
+  overflow-y: hidden;
+  transition: max-height 0.2s ease-in-out;
+
+  /* Smoother ease-in */
+  transition-timing-function: cubic-bezier(0.7, 0, 1, 0.3);
+}
+
+#main-menu-toggle:checked ~ nav {
+  display: block;
+  max-height: var(--main-menu-max-height);
+
+  /* Smoother ease-out */
+  transition-timing-function: cubic-bezier(0, 0.7, 0.3, 1);
+}
+
+#main-menu nav a {
+  display: block;
+}
+
+#main-menu nav li.active {
+  font-weight: 700;
+}
+
+@media screen and (min-width: 40em) {
+  label[for="main-menu-toggle"] {
+    display: none;
+  }
+
+  #main-menu-toggle ~ nav {
+    max-height: none;
+  }
+
+  #main-menu nav ul {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+  }
+
+  #main-menu nav ul li {
+    margin-right: 0.5rem;
+  }
+
+  #main-menu nav a {
+    display: inline-block;
+  }
+}
+
+/* Footer menu */
+
+#footer-menu nav li.active {
+  font-weight: 700;
+}
