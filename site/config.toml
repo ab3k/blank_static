@@ -3,3 +3,13 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 languageCode = "en-us"
 theme = "blank_theme"
 title = "My New Hugo Site"
+
+# NB: URLs need to end with a trailing / in order to get recognized as acive
+# menu item
+[menu]
+
+[[menu.footer]]
+identifier = "impress"
+name = "Impress (404)"
+url = "/impress/"
+weight = 3
