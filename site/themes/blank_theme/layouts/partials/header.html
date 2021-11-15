@@ -1,4 +1,11 @@
 <header id="header">
+  {{- block "site_title" . }}
+    <div id="title">
+      <a href="{{ .Site.Home.URL | relURL }}">
+        {{ with .Params.site_title }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}
+      </a>
+    </div>
+  {{- end }}
   {{- block "main_menu" . }}
     <div class="container">
       {{- partial "main_menu.html" . -}}
