@@ -1,5 +1,7 @@
 <header id="header">
-  <div class="container">
-    {{- partial "main_menu.html" . -}}
-  </div>
+  {{- block "main_menu" . }}
+    <div class="container">
+      {{- partial "main_menu.html" . -}}
+    </div>
+  {{- end }}
 </header>
