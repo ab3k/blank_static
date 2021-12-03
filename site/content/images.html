@@ -1,0 +1,147 @@
+---
+title: "Images"
+date: 2021-11-15T21:45:05+01:00
+menu: main
+---
+
+<h1>{{< param "title">}}</h1>
+
+<h2>Image in text flow</h2>
+
+<p>
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio illum
+  delectus obcaecati beatae hic impedit rerum? Libero ipsam ullam veritatis ipsum
+  architecto deserunt, et minima quo repellendus voluptate vel sed.
+</p>
+
+<div class="image ratio-golden">
+  <div class="image-canvas">
+    <img src="/images/placeholder-900x600.jpg" width="900" height="600" alt="Placeholder">
+  </div>
+  <div class="image-credits">
+    <small>Credits for the image</small>
+  </div>
+</div>
+
+<p>
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio illum
+  delectus obcaecati beatae hic impedit rerum? Libero ipsam ullam veritatis ipsum
+  architecto deserunt, et minima quo repellendus voluptate vel sed.
+</p>
+
+<h2>Responsive image</h2>
+
+<p>
+  The image resolution changes depending on the viewport width or the pixel
+  density.
+</p>
+
+<div class="image ratio-3-2">
+  <div class="image-canvas">
+    <img alt="Placeholder" src="/images/placeholder-600x400.jpg" width="600" height="400"
+      srcset="/images/placeholder-600x400.jpg 400w, /images/placeholder-900x600.jpg 600w, /images/placeholder-1200x800.jpg 800w"
+      sizes="(max-width: 40em) 400w, 800w">
+  </div>
+  <div class="image-credits">
+    <small>Credits for the image</small>
+  </div>
+</div>
+
+<p>
+  Responsive image with format selection: AVIF, WebP or JPEG.
+</p>
+
+<div class="image ratio-3-2">
+  <div class="image-canvas">
+    <picture>
+      <source type="image/avif"
+        srcset="/images/placeholder-600x400.avif 400w, /images/placeholder-900x600.avif 600w, /images/placeholder-1200x800.avif 800w"
+        sizes="(max-width: 40em) 400w, 800w">
+      <source type="image/webp"
+        srcset="/images/placeholder-600x400.webp 400w, /images/placeholder-900x600.webp 600w, /images/placeholder-1200x800.webp 800w"
+        sizes="(max-width: 40em) 400w, 800w">
+      <img alt="Placeholder" src="/images/placeholder-600x400.jpg" width="600" height="400"
+        srcset="/images/placeholder-600x400.jpg 400w, /images/placeholder-900x600.jpg 600w, /images/placeholder-1200x800.jpg 800w"
+        sizes="(max-width: 40em) 400w, 800w">
+    </picture>
+  </div>
+  <div class="image-credits">
+    <small>Credits for the image</small>
+  </div>
+</div>
+
+<h2>Ratios</h2>
+
+<p>
+  Images can be contained in specific ratios, the fixed variable is the height
+  in order to stay in the vertical rhythm.
+  The ratios act as container, the image is covering the container.
+  So if the image is taller some image content will get clipped.
+</p>
+
+<p>Tip: Choose a corresponding ratio.</p>
+
+<div class="image">
+  <div class="image-canvas">
+    <img src="/images/placeholder-1200x800.jpg" width="1200" height="800" alt="Placeholder">
+  </div>
+  <div class="image-credits">
+    <small>No ratio, only height set</small>
+  </div>
+</div>
+
+<div class="image ratio-1-1">
+  <div class="image-canvas">
+    <img src="/images/placeholder-1200x800.jpg" width="1200" height="800" alt="Placeholder">
+  </div>
+  <div class="image-credits">
+    <small>Ratio 1:1</small>
+  </div>
+</div>
+
+<div class="image ratio-4-3">
+  <div class="image-canvas">
+    <img src="/images/placeholder-1200x800.jpg" width="1200" height="800" alt="Placeholder">
+  </div>
+  <div class="image-credits">
+    <small>Ratio 4:3</small>
+  </div>
+</div>
+
+<div class="image ratio-3-2">
+  <div class="image-canvas">
+    <img src="/images/placeholder-1200x800.jpg" width="1200" height="800" alt="Placeholder">
+  </div>
+  <div class="image-credits">
+    <small>Ratio 3:2</small>
+  </div>
+</div>
+
+<div class="image ratio-golden">
+  <div class="image-canvas">
+    <img src="/images/placeholder-1200x800.jpg" width="1200" height="800" alt="Placeholder">
+  </div>
+  <div class="image-credits">
+    <small>Golden Ratio 1.618:1</small>
+  </div>
+</div>
+
+<div class="image ratio-16-9">
+  <div class="image-canvas">
+    <img src="/images/placeholder-1200x800.jpg" width="1200" height="800" alt="Placeholder">
+  </div>
+  <div class="image-credits">
+    <small>Ratio 16:9</small>
+  </div>
+</div>
+
+<h2>Image unconstrained</h2>
+
+<div class="image image-unconstrained">
+  <div class="image-canvas">
+    <img src="/images/placeholder-1200x800.jpg" width="1200" height="800" alt="Placeholder">
+  </div>
+  <div class="image-credits">
+    <small>No ratio, height auto, breaks vertical rhythm</small>
+  </div>
+</div>

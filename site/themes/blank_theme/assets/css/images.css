@@ -1,0 +1,59 @@
+.image {
+  --padding-x: calc(var(--quarter-line) * 2);
+  --height: calc(var(--full-line) * 7);
+
+  width: fit-content;
+  max-width: 100%;
+  padding: var(--quarter-line);
+  margin: 0 auto var(--full-line) auto;
+  margin-bottom: calc(var(--quarter-line) * 6);
+  background-color: #eee;
+}
+
+@media screen and (min-width: 40em) {
+  .image {
+    --height: calc(var(--full-line) * 10);
+  }
+}
+
+.image .image-canvas {
+  position: relative;
+  width: auto;
+  height: var(--height);
+}
+
+.image.image-unconstrained .image-canvas {
+  height: auto;
+}
+
+.image .image-canvas img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.image.ratio-1-1 {
+  width: calc(var(--height) * 1 + var(--padding-x));
+}
+
+.image.ratio-4-3 {
+  width: calc(var(--height) * 4 / 3 + var(--padding-x));
+}
+
+.image.ratio-3-2 {
+  width: calc(var(--height) * 3 / 2 + var(--padding-x));
+}
+
+.image.ratio-golden {
+  width: calc(var(--height) * 1.618 + var(--padding-x));
+}
+
+.image.ratio-16-9 {
+  width: calc(var(--height) * 16 / 9 + var(--padding-x));
+}
+
+.image .image-credits {
+  width: 100%;
+  text-align: left;
+}
