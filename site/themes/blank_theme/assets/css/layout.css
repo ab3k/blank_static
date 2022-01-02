@@ -36,7 +36,7 @@
 
 @media (min-width: 40em) {
   :root {
-    --base-size: 19px;
+    --base-size: 18px;
     --base-line: 1.5;
   }
 }
