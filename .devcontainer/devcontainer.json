@@ -1,0 +1,9 @@
+{
+  "image": "docker.io/ab3k/debian-hugo:bullseye",
+  "extensions": [
+    "budparr.language-hugo-vscode",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint"
+  ],
+  "forwardPorts": [1313]
+}
