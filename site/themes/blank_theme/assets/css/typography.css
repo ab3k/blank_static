@@ -127,3 +127,29 @@ ul > li::before {
   font-size: 1.424rem;
   line-height: var(--full-line);
 }
+
+figure.quote {
+  margin-bottom: var(--full-line);
+}
+
+figure.quote blockquote {
+  position: relative;
+  padding: var(--half-line);
+}
+
+figure.quote blockquote::before {
+  position: absolute;
+  top: var(--half-line);
+  left: 0;
+  content: "“";
+  font-size: 150%;
+  line-height: var(--full-line);
+}
+
+figure.quote blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+figure.quote figcaption {
+  font-style: italic;
+}
