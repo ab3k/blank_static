@@ -34,7 +34,11 @@
   line-height: var(--base-line);
 }
 
-@media (min-width: 40em) {
+@custom-media --small-viewport (max-width: 40em);
+@custom-media --medium-viewport (min-width: 40em);
+@custom-media --large-viewport (min-width: 70em);
+
+@media (--small-viewport) {
   :root {
     --base-size: 18px;
     --base-line: 1.5;
@@ -95,7 +99,7 @@ body {
   grid-column: 2 / 2;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (--medium-viewport) {
   .container {
     max-width: 40rem;
     margin-right: auto;
@@ -103,7 +107,7 @@ body {
   }
 }
 
-@media screen and (min-width: 70em) {
+@media screen and (--large-viewport) {
   .container {
     margin-left: clamp(1rem, 20%, 20rem);
   }
