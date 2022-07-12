@@ -1,0 +1,21 @@
+# EXAMPLE USAGE
+# Refer for explanation to following link:
+# https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
+
+pre-push:
+  parallel: false
+  commands:
+    eslint-check-all:
+      run: node site/node_modules/.bin/eslint site/themes/*/assets/**/*.js
+    stylelint-check-all:
+      run: node site/node_modules/.bin/stylelint site/themes/*/assets/**/*.css
+
+pre-commit:
+  parallel: false
+  commands:
+    eslint-check-staged:
+      glob: "*.js"
+      run: node site/node_modules/.bin/eslint {staged_files}
+    stylelint-check-staged:
+      glob: "*.css"
+      run: node site/node_modules/.bin/stylelint {staged_files}
