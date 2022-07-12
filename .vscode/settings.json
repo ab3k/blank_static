@@ -1,0 +1,15 @@
+{
+    // ESLint
+    "javascript.validate.enable": false,
+    "eslint.format.enable": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    // StyleLint
+    "scss.validate": false,
+    "less.validate": false,
+    "css.validate": false,
+    "[css]": {
+        "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    }
+}
