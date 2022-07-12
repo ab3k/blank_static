@@ -8,6 +8,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "postcss": "^8.4.14",
     "postcss-cli": "^9.0.2",
+    "postcss-custom-media": "^8.0.2",
     "postcss-nesting": "^10.0.2",
     "stylelint": "^14.0.0",
     "stylelint-config-idiomatic-order": "^8.1.0",
