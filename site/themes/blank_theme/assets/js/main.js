@@ -9,6 +9,6 @@ if (isModern()) {
 initMainMenu()
 
 window.Theme = {
-  isModern: isModern,
-  toggleVerticalRhythm: toggleVerticalRhythm
+  isModern,
+  toggleVerticalRhythm
 }

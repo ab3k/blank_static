@@ -18,7 +18,7 @@
   white-space: nowrap !important;
 }
 
-.visually-hidden-focusable:not(:focus):not(:focus-within):not(:active) {
+.visually-hidden-focusable:not(:focus, :focus-within, :active) {
   position: absolute !important;
   overflow: hidden !important;
   width: 1px !important;
