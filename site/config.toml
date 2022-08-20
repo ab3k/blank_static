@@ -2,7 +2,7 @@ baseURL = "http://example.org/"
 disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 languageCode = "en-us"
 theme = "blank_theme"
-title = "My New Hugo Site"
+title = "Blank Site"
 
 # NB: URLs need to end with a trailing / in order to get recognized as acive
 # menu item
