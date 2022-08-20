@@ -9,6 +9,9 @@ pre-push:
       run: node site/node_modules/.bin/eslint site/themes/*/assets/**/*.js
     stylelint-check-all:
       run: node site/node_modules/.bin/stylelint site/themes/*/assets/**/*.css
+    hugo-build:
+      root: site/
+      run: hugo --ignoreCache --cleanDestinationDir --destination /tmp/lefthook/hugo
 
 pre-commit:
   parallel: false
