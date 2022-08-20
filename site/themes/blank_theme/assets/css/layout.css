@@ -1,27 +1,5 @@
 /**
- * 2 breakpoints, 3 widths:
- *   (small)
- *   40em
- *   (medium)
- *   70em
- *   (large)
- *
- * layout structure:
- *   (very top)
- *   #page
- *     #header
- *       #banner, #title
- *     #content
- *     #footer
- *   (very bottom)
- *
- * contrainted containers:
- * full width on small, max width centered on medium, max width pushed
- * left on large
- *   .container
- *   .flex-container (display: flex)
- *   .grid-container (display: grid)
- *     .before .content .after
+ * Layout
  */
 
 :root {
