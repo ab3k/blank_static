@@ -6,9 +6,11 @@ pre-push:
   parallel: false
   commands:
     eslint-check-all:
-      run: node site/node_modules/.bin/eslint site/themes/*/assets/**/*.js
+      root: site/
+      run: npx eslint themes/*/assets/**/*.js
     stylelint-check-all:
-      run: node site/node_modules/.bin/stylelint site/themes/*/assets/**/*.css
+      root: site/
+      run: npx stylelint themes/*/assets/**/*.css
     hugo-build:
       root: site/
       run: hugo --ignoreCache --cleanDestinationDir --destination /tmp/lefthook/hugo
@@ -17,8 +19,10 @@ pre-commit:
   parallel: false
   commands:
     eslint-check-staged:
+      root: site/
       glob: "*.js"
-      run: node site/node_modules/.bin/eslint {staged_files}
+      run: npx eslint {staged_files}
     stylelint-check-staged:
+      root: site/
       glob: "*.css"
-      run: node site/node_modules/.bin/stylelint {staged_files}
+      run: npx stylelint {staged_files}
