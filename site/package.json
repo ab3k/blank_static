@@ -2,16 +2,17 @@
   "name": "blank_static",
   "devDependencies": {
     "autoprefixer": "^10.4.0",
-    "eslint": "^8.0.0",
+    "eslint": "^8.28.0",
     "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "postcss": "^8.4.14",
-    "postcss-cli": "^9.0.2",
-    "postcss-custom-media": "^8.0.2",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "postcss": "^8.4.19",
+    "postcss-cli": "^10.1.0",
+    "postcss-custom-media": "^9.0.1",
     "postcss-nesting": "^10.0.2",
-    "stylelint": "^14.0.0",
-    "stylelint-config-idiomatic-order": "^8.1.0",
-    "stylelint-config-standard": "^26.0.0"
+    "stylelint": "^14.0.1",
+    "stylelint-config-idiomatic-order": "^9.0.0",
+    "stylelint-config-standard": "^29.0.0"
   }
 }
