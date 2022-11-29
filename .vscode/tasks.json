@@ -8,7 +8,7 @@
             "type": "shell",
             "command": "hugo server --bind \"0.0.0.0\" --buildDrafts",
             "problemMatcher": [],
-            "group": "dev",
+            "group": "none",
             "options": {
                 "cwd": "${workspaceFolder}/site"
             },

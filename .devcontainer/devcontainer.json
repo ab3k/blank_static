@@ -4,6 +4,5 @@
     "budparr.language-hugo-vscode",
     "dbaeumer.vscode-eslint",
     "stylelint.vscode-stylelint"
-  ],
-  "forwardPorts": [1313]
+  ]
 }
