@@ -23,38 +23,38 @@ A boilerplate Hugo project
 
 2 breakpoints, 3 widths
 
-* (small)
+- (small)
   - `40em`
-* (medium)
+- (medium)
   - `70em`
-* (large)
+- (large)
 
 ### Layout structure
 
 - *(very top)*
 - `#page`
-  * `#header`
+  - `#header`
     - `#banner`, `#title`
-  * `#content`
-  * `#footer`
+  - `#content`
+  - `#footer`
 - *(very bottom)*
 
 ### Contrainted containers
 
 Behaviour depending on width
 
-* small: has full width
-* medium: has a max width and centered
-* large: has a max width and is pulled to the left (not centered)
+- small: has full width
+- medium: has a max width and centered
+- large: has a max width and is pulled to the left (not centered)
 
 Different displays:
 
 - `.container`
 - `.flex-container` (`display: flex`)
 - `.grid-container` (`display: grid`)
-  * `.before`
-  * `.content`
-  * `.after`
+  - `.before`
+  - `.content`
+  - `.after`
 
 ## Utilities
 
@@ -98,7 +98,7 @@ hugo
 
 A devcontainer is configured to provide a consistent dev setup.
 It uses the `ab3k/debian-hugo:bullseye` container, based on Debian stable (11)
-and Node 16 from https://deb.nodesource.com.
+and Node 16 from <https://deb.nodesource.com>.
 
 Two tasks are also provided:
 
