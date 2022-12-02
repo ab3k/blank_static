@@ -13,7 +13,7 @@ A boilerplate Hugo project
 - Image styling
 - Vertical rhythm
 - Basic quotation styling
-- PostCSS (autoprefixer, nesting)
+- PostCSS (autoprefixer, nesting, custom-media)
 - Bundling with esbuild
 - Linting (eslint, stylelint)
 
@@ -104,3 +104,32 @@ Two tasks are also provided:
 
 - `Hugo: run server with drafts` to run a Hugo dev server at port 1313
 - `Hugo: build` to build the site
+
+## Supported browsers
+
+Target browser which have been released since 2019:
+
+- Chrome 71+
+- Firefox 64+
+- Edge 79+
+- Safari 12+
+- Safari on iOS 12.1+
+
+Some older versions might be supported too but it is not expected.
+
+Assume at least support for:
+
+- ES6:
+  - See <https://caniuse.com/es6>
+  - Unsupported: IE (just partial support), Firefox before 54 (2017), Chrome before 51 (2016)
+- WOFF2:
+  - See <https://caniuse.com/woff2>
+  - Unsupported: IE, macOS before 10.12 (2016)
+
+Thus supported too:
+
+- ES6 modules: <https://caniuse.com/es6-module>
+- `fetch`: <https://caniuse.com/fetch>
+- `navigator.sendBeacon`: <https://caniuse.com/beacon>
+- ES6 (ECMAScript 2015): Promises, `let`/`const`, template literals, arrow functions, destructuring assignment, ...
+- ES8 (ECMAScript 2017): `async`/`await`
