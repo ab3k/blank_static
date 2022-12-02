@@ -4,6 +4,7 @@
   "extensions": [
     "budparr.language-hugo-vscode",
     "dbaeumer.vscode-eslint",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "davidanson.vscode-markdownlint"
   ]
 }
