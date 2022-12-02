@@ -1,5 +1,6 @@
 {
   "image": "docker.io/ab3k/debian-hugo:bullseye",
+  "runArgs": ["--init"],
   "extensions": [
     "budparr.language-hugo-vscode",
     "dbaeumer.vscode-eslint",
