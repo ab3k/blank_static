@@ -14,6 +14,10 @@ pre-push:
       root: site/
       glob: "*/themes/*/assets/**/*.css"
       run: npx stylelint {all_files}
+    prettier-check-all:
+      root: site/
+      glob: "*/themes/*/layouts/**/*.html"
+      run: npx prettier -c {all_files}
     hugo-build:
       root: site/
       run: hugo --ignoreCache --cleanDestinationDir --destination /tmp/lefthook/hugo
@@ -30,3 +34,7 @@ pre-commit:
       root: site/
       glob: "*/themes/*/assets/**/*.css"
       run: npx stylelint {staged_files}
+    prettier-check-staged:
+      root: site/
+      glob: "*/themes/*/layouts/**/*.html"
+      run: npx prettier -c {staged_files}

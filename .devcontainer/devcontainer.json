@@ -5,6 +5,7 @@
     "budparr.language-hugo-vscode",
     "dbaeumer.vscode-eslint",
     "stylelint.vscode-stylelint",
-    "davidanson.vscode-markdownlint"
+    "davidanson.vscode-markdownlint",
+    "esbenp.prettier-vscode"
   ]
 }

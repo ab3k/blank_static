@@ -11,6 +11,8 @@
     "postcss-cli": "^10.1.0",
     "postcss-custom-media": "^9.0.1",
     "postcss-nesting": "^10.0.2",
+    "prettier": "^2.8.1",
+    "prettier-plugin-go-template": "^0.0.13",
     "stylelint": "^14.0.1",
     "stylelint-config-idiomatic-order": "^9.0.0",
     "stylelint-config-standard": "^29.0.0"

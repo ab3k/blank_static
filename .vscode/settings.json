@@ -11,5 +11,9 @@
     "css.validate": false,
     "[css]": {
         "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    },
+    // Prettier for HTML, Go Template
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
