@@ -7,10 +7,13 @@ pre-push:
   commands:
     eslint-check-all:
       root: site/
-      run: npx eslint themes/*/assets/**/*.js
+      glob: "*/themes/*/assets/**/*.js"
+      exclude: "*.min.js"
+      run: npx eslint {all_files}
     stylelint-check-all:
       root: site/
-      run: npx stylelint themes/*/assets/**/*.css
+      glob: "*/themes/*/assets/**/*.css"
+      run: npx stylelint {all_files}
     hugo-build:
       root: site/
       run: hugo --ignoreCache --cleanDestinationDir --destination /tmp/lefthook/hugo
@@ -20,9 +23,10 @@ pre-commit:
   commands:
     eslint-check-staged:
       root: site/
-      glob: "*.js"
+      glob: "*/themes/*/assets/**/*.js"
+      exclude: "*.min.js"
       run: npx eslint {staged_files}
     stylelint-check-staged:
       root: site/
-      glob: "*.css"
+      glob: "*/themes/*/assets/**/*.css"
       run: npx stylelint {staged_files}
