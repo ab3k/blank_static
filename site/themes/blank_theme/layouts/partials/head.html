@@ -1,10 +1,15 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>{{- block "title" . }}{{ with .Params.page_title }}{{ . }}{{ else }}{{ .Title }} – {{ .Site.Title }}{{ end }}{{- end }}</title>
+<title>
+  {{- block "title" . }}
+    {{ with .Params.page_title }}{{ . }}{{ else }}{{ .Title }} – {{ .Site.Title }}{{ end }}
+  {{- end }}
+
+</title>
 
 {{ if not .Site.IsServer }}
-<base href="{{ .Site.BaseURL }}">
-{{ end}}
+  <base href="{{ .Site.BaseURL }}" />
+{{ end }}
 
 {{ partial "head_includes.html" . }}
 

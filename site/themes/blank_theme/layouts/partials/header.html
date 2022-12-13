@@ -3,7 +3,11 @@
     <div class="container">
       <div id="title">
         <a href="{{ .Site.Home.Permalink | relURL }}">
-          {{ with .Params.site_title }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}
+          {{ with .Params.site_title }}
+            {{ . }}
+          {{ else }}
+            {{ .Site.Title }}
+          {{ end }}
         </a>
       </div>
     </div>

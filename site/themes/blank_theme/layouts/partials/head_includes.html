@@ -1,35 +1,39 @@
 <script type="module">
-  document.documentElement.classList.remove('no-js');
-  document.documentElement.classList.add('js');
+  document.documentElement.classList.remove("no-js");
+  document.documentElement.classList.add("js");
 </script>
 
-<link rel="canonical" href="{{ .Permalink }}">
+<link rel="canonical" href="{{ .Permalink }}" />
 
-<link rel="icon" href="/favicon.ico">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" href="/favicon.ico" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 
 {{ if $.Site.Params.themeColor }}
-<meta name="theme-color" content="{{ $.Site.Params.themeColor }}">
+  <meta name="theme-color" content="{{ $.Site.Params.themeColor }}" />
 {{ end }}
 
 {{ $css := resources.Get "css/main.css" }}
 {{ $opts := dict "inlineImports" true }}
 {{ $css = $css | resources.PostCSS $opts }}
 {{ if .Site.IsServer }}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}" />
-{{ else}}
-{{ $css = $css | resources.Minify | resources.Fingerprint "sha256" }}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}" {{ printf "integrity=%q" $css.Data.Integrity | safeHTMLAttr }} />
-{{ end}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+{{ else }}
+  {{ $css = $css | resources.Minify | resources.Fingerprint "sha256" }}
+  <link
+    rel="stylesheet"
+    href="{{ $css.RelPermalink }}"
+    {{ printf "integrity=%q" $css.Data.Integrity | safeHTMLAttr }}
+  />
+{{ end }}
 
 {{ $js := resources.Get "js/main.js" }}
 {{ if .Site.IsServer }}
-{{ $opts := dict "target" "es6" "minify" false "format" "iife" "sourceMap" "inline" }}
-{{ $js = $js | js.Build $opts }}
-{{ else}}
-{{ $opts := dict "target" "es6" "minify" true "format" "iife" }}
-{{ $js = $js | js.Build $opts }}
-{{ end}}
+  {{ $opts := dict "target" "es6" "minify" false "format" "iife" "sourceMap" "inline" }}
+  {{ $js = $js | js.Build $opts }}
+{{ else }}
+  {{ $opts := dict "target" "es6" "minify" true "format" "iife" }}
+  {{ $js = $js | js.Build $opts }}
+{{ end }}
 <script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>

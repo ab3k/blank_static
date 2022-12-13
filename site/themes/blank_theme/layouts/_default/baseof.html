@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}" class="no-js">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
 
-<head>
-  {{ partial "head.html" . }}
-</head>
-
-<body>
-  {{- partial "very_top.html" . -}}
-  <div id="page">
-    {{- partial "header.html" . -}}
-    {{- block "main" . }}{{ .Content }}{{- end }}
-    {{- partial "footer.html" . -}}
-  </div>
-  {{- partial "very_bottom.html" . -}}
-</body>
-
+  <body>
+    {{- partial "very_top.html" . -}}
+    <div id="page">
+      {{- partial "header.html" . -}}
+      {{- block "main" . }}{{ .Content }}{{- end }}
+      {{- partial "footer.html" . -}}
+    </div>
+    {{- partial "very_bottom.html" . -}}
+  </body>
 </html>
